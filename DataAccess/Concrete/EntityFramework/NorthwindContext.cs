@@ -12,13 +12,15 @@ namespace DataAccess.Concrete.EntityFramework
         //Db yerini göstermek için
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            //Sql server kullanacağım ve nasıl bağlanacağını belirmeliyim.
-            optionsBuilder.UseSqlServer(@"Server=LENOVO-PC\SQL2019;Database-Northwind;Trusted_Connection=true");
+            //Sql server kullanacağım ve nasıl bağlanacağını belirlemeliyiz.
+            optionsBuilder.UseSqlServer(@"Server=LENOVO-PC\SQL2019;Database=Northwind;Trusted_Connection=true");
         }
         //kullandığımız tabloları tanımladık
         public DbSet<Product> Products { get; set; }
         public DbSet<Category> Categories { get; set; }
         public DbSet<Customer> Customers { get; set; }
+        public DbSet<Order> Orders { get; set; }
+
 
     }
 }
